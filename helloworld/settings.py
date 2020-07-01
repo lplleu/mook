@@ -23,7 +23,7 @@ SECRET_KEY = ''
 DEBUG = True
 
 # A list of strings representing the host/domain names that this Django site can serve.
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['deamaun.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
