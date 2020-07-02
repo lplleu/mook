@@ -1,1 +1,1 @@
-web:gunicorn app:pulse
+web:gunicorn pulse.py
