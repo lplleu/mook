@@ -1,1 +1,1 @@
-web: gunicorn pulse:app
+web:gunicorn app:pulse
