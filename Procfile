@@ -1,1 +1,1 @@
-web: gunicorn -b $PORT app:pulse
+web: gunicorn app:pulse
