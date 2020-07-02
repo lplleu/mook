@@ -1,1 +1,1 @@
-web gunicorn pulse:application
+web gunicorn pulse
