@@ -32,7 +32,7 @@ from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('Hello World<p><a href="zero" target_="blank">0</a>|<a href="one">1</a>|<a href=two"">2</a>|<a href="three">3</a>|<a href="four">4</a>')
+    return HttpResponse('Hello World<p><a href="zero" target_="blank">0</a>|<a href="one">1</a>|<a href="two">2</a>|<a href="three">3</a>|<a href="four">4</a>')
 
 def zero(request):
     return HttpResponse('This is zero')
