@@ -64,10 +64,10 @@ TIME_ZONE = 'UTC'
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[#os.path.join(SETTINGS_PATH, 'templates'),
+   'DIRS':[os.path.join(SETTINGS_PATH, 'templates'),
            'templates',
-           #os.path.join(BASE_DIR, 'templates'),
-           #os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),
+           os.path.join(BASE_DIR, 'templates'),
+           os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),
    ],
    'APP_DIRS':True,
    'OPTIONS':{
