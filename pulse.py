@@ -23,7 +23,10 @@ import datetime
 from django.conf import settings
 from django.shortcuts import render
 from django.contrib import admin
-
+#from django.template.loader import get_template 
+from django import template
+    from django.template.loader import get_template 
+ 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
 #SECRET_KEY = os.environ.get('SECRET_KEY', '{{ secret_key' }})
