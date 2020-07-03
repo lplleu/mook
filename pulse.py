@@ -22,7 +22,7 @@ import sys
 import datetime
 
 from io import BytesIO
-from PIL import Image, ImageDraw
+#from PIL import Image, ImageDraw
 
 from django.conf import settings
 from django.shortcuts import render
