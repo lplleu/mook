@@ -53,10 +53,12 @@ MIDDLEWARE = [
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[],
+   'DIRS':[os.path.join(SETTINGS_PATH, 'templates')],
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
@@ -81,12 +83,6 @@ settings.configure(
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ),
-)
-
-SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
-
-TEMPLATE_DIRS = (
-    os.path.join(SETTINGS_PATH, 'templates'),
 )
 
 from django.conf.urls import url
