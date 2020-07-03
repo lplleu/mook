@@ -187,6 +187,7 @@ urlpatterns = (
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
     url('zero/', zero),
+''' 
     url('one', one),
     #url('one', views.one, name="one"),
     url('two', two),
@@ -195,6 +196,7 @@ urlpatterns = (
     url('five', five),
     url('six', six),
     url('seven', seven),
+ '''   
 )
 
 application = get_wsgi_application()
