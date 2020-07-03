@@ -103,8 +103,7 @@ def zero(request):
 def one(request):
    today = datetime.datetime.now().date()
    try:
-       self.template_name = "pulse.htm"
-       get_template(self.template_name)
+       get_template("pulse.htm")
        return render(request, "pulse.htm", {"today" : today})
    except TemplateDoesNotExist:
        return HttpResponse(BASE_DIR)
