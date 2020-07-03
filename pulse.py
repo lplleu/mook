@@ -22,6 +22,7 @@ import datetime
 
 from django.conf import settings
 from django.shortcuts import render
+from django.contrib import admin
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
@@ -114,6 +115,7 @@ def four(request):
 
 urlpatterns = (
     url(r'^$', index),
+    url(r'^admin/', admin.site.urls),
     url('zero/', zero),
     url('one', one),
     #url('one', views.one, name="one"),
