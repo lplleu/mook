@@ -127,7 +127,7 @@ from django.http import HttpResponse
 from django.template import loader, Context
 
 def index(request):
-    return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one">1</a>|<a href="two">2</a>|<a href="three">3</a>|<a href="four">4</a>|<a href="five">5</a>|<a href="six">6</a>|<a href="seven">7</a>')
+    return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
 def zero(request):
     return HttpResponse('This is zero')
