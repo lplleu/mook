@@ -170,12 +170,12 @@ def five(request):
    
 def six(request):
        today = datetime.datetime.now().date()
-       '''
-       example = reverse('placeholder', kwargs={'width':50,'height':50})
-       context={
-          'example':request.build_absolute_uri(example)
-       }
-       '''
+       
+       #example = reverse('placeholder', kwargs={'width':50,'height':50})
+       #context={
+       #   'example':request.build_absolute_uri(example)
+       #}
+       
        return render(request, 'pulse.htm', {"today" : today})
 
 def seven(request):
