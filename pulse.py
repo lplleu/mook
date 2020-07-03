@@ -136,7 +136,18 @@ def three(request):
 def four(request):
     return HttpResponse('four')
 
+def five(request):
+       today = datetime.datetime.now().date()
+       return render(request, "/pulse.htm", {"today" : today})
+   
+def six(request):
+       today = datetime.datetime.now().date()
+       return render(request, "templates/pulse.htm", {"today" : today})
 
+def seven(request):
+       today = datetime.datetime.now().date()
+       return render(request, "pulse.htm/", {"today" : today})
+  
 urlpatterns = (
     url(r'^$', index),
     #url(r'^admin/', admin.site.urls),
@@ -146,6 +157,9 @@ urlpatterns = (
     url('two', two),
     url('three', three),
     url('four', four),
+    url('five', five),
+    url('six', six),
+    url('seven', seven),
 )
 
 application = get_wsgi_application()
