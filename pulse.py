@@ -139,8 +139,8 @@ def zero(request):
 def one(request):
        #return HttpResponse(SETTINGS_PATH)
        today = datetime.datetime.now().date()
-       return render(request, 'pulse.htm', {"today" : today})
-       #return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
+       #return render(request, 'pulse.htm', {"today" : today})
+       return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
 
 '''
 def one(request):
@@ -152,7 +152,7 @@ def one(request):
        return HttpResponse(BASE_DIR)
        #raise Http404
 '''         
-   
+'''   
 
 def two(request):
     return HttpResponse('two')
@@ -181,7 +181,8 @@ def six(request):
 def seven(request):
        today = datetime.datetime.now().date()
        return render(request, "pulse.htm/", {"today" : today})
-  
+'''
+
 urlpatterns = (
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
