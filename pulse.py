@@ -32,7 +32,6 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'deamaun.herokuapp.com').split('
 
 INSTALLED_APPS = [
  'pulse',
- 'deamaun',
  'django.contrib.admin',
  'django.contrib.auth',
  'django.contrib.contenttypes',
