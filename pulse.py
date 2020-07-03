@@ -102,7 +102,15 @@ def zero(request):
 
 def one(request):
    today = datetime.datetime.now().date()
-   return render(request, "pulse.htm", {"today" : today})
+   try:
+       self.template_name = "pulse.htm"
+       get_template(self.template_name)
+       return render(request, "pulse.htm", {"today" : today})
+   except TemplateDoesNotExist:
+       return HttpResponse(BASE_DIR)
+       #raise Http404
+         
+   
   
 def two(request):
     return HttpResponse('two')
