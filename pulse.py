@@ -68,7 +68,7 @@ MIDDLEWARE = [
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(__file__)
