@@ -23,7 +23,8 @@ import datetime
 from django.conf import settings
 from django.shortcuts import render
 from django.contrib import admin
-#from django.template.loader import get_template 
+#from django.template.loader import get_template from django.apps import AppConfig
+from django.apps import AppConfig
 from django import template
 from django.template.loader import get_template 
  
