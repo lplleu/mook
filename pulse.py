@@ -91,8 +91,9 @@ def zero(request):
     return HttpResponse('This is zero')
 
 def one(request):
-    return HttpResponse('one')
-
+   today = datetime.datetime.now().date()
+   return render(request, "pulse.htm", {"today" : today})
+  
 def two(request):
     return HttpResponse('two')
 
