@@ -65,8 +65,10 @@ TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
    'DIRS':[#os.path.join(SETTINGS_PATH, 'templates'),
-           os.path.join(BASE_DIR, 'templates'),
-           os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),],
+           'templates',
+           #os.path.join(BASE_DIR, 'templates'),
+           #os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),
+   ],
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
@@ -109,7 +111,8 @@ def zero(request):
  
 def one(request):
        #return HttpResponse(SETTINGS_PATH)
-       return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
+       return render(request, "pulse.htm", {"today" : today})
+       #return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
 
 '''
 def one(request):
