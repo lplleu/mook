@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'deamaun.herokuapp.com').split(',')
 
 INSTALLED_APPS = [
- 'pulse',
+ 'pulse.apps.AppNameConfig',
  'django.contrib.admin',
  'django.contrib.auth',
  'django.contrib.contenttypes',
@@ -54,11 +54,13 @@ MIDDLEWARE = [
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
    'DIRS':[os.path.join(SETTINGS_PATH, 'templates'),
-           #os.path.join(BASE_DIR, 'templates'),
+           os.path.join(BASE_DIR, 'templates'),
            os.path.join(SETTINGS_PATH, 'pulse', 'templates', 'pulse'),],
    'APP_DIRS':True,
    'OPTIONS':{
