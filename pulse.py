@@ -72,6 +72,7 @@ MIDDLEWARE = [
 
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(__file__)
+MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 TIME_ZONE = 'UTC'
 
 '''
@@ -113,7 +114,7 @@ settings.configure(
         'django.contrib.staticfiles',
    ),
    TEMPLATE_DIRS=(
-        os.path.join(BASE_DIR,'templates'),
+        os.path.join(BASE_DIR,'templates/pulse'),
    ),
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
