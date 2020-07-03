@@ -16,9 +16,13 @@
 #custom letter
 #access controlled stats
 
+import hashlib
 import os
 import sys
 import datetime
+
+from io import BytesIO
+from PIL import Image, ImageDraw
 
 from django.conf import settings
 from django.shortcuts import render
@@ -27,7 +31,12 @@ from django.contrib import admin
 from django.apps import AppConfig
 from django import template
 from django.template.loader import get_template 
- 
+from django.core.cache import cache
+from django.core.urlresolvers import reverse
+from django.core.wsgi import get_wsgi_application
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.views.decorators.http import etag
+
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
 #SECRET_KEY = os.environ.get('SECRET_KEY', '{{ secret_key' }})
@@ -35,6 +44,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'deamaun.herokuapp.com').split(',')
 
+'''
 INSTALLED_APPS = [
  'pulse.apps.PulseConfig',
  'django.contrib.admin',
@@ -46,6 +56,7 @@ INSTALLED_APPS = [
  'django.contrib.AccountsConfig',
 
 ]
+'''
 
 MIDDLEWARE = [
   'django.middleware.security.SecurityMiddleware',
@@ -57,11 +68,13 @@ MIDDLEWARE = [
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+#SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(__file__)
 TIME_ZONE = 'UTC'
 
+'''
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
@@ -80,7 +93,7 @@ TEMPLATES = [
        ]},
   }
   ]
-
+'''
 
 #DATABASE = {}
 
@@ -94,6 +107,17 @@ settings.configure(
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ),
+   INSTALLED_APPS=(
+        'django.contrib.staticfiles',
+   ),
+   TEMPLATE_DIRS(
+        os.path.join(BASE_DIR,'templates'),
+   ),
+   STATICFILES_DIRS=(
+        os.path.join(BASE_DIR, 'static'),
+   ),
+   STATIC_URL='/static/',
+   ),
 )
 
 from django.conf.urls import url
@@ -142,15 +166,18 @@ def five(request):
        return render(request, "/pulse.htm", {"today" : today})
    
 def six(request):
-       today = datetime.datetime.now().date()
-       return render(request, "templates/pulse.htm", {"today" : today})
+       example = reverse('placeholder', kwargs={'width':50,'height':50})
+       context={
+          'example':request.build_absolute_uri(example)
+       }
+       return render(request, 'pulse.htm', context)
 
 def seven(request):
        today = datetime.datetime.now().date()
        return render(request, "pulse.htm/", {"today" : today})
   
 urlpatterns = (
-    url(r'^$', index),
+    url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
     url('zero/', zero),
     url('one', one),
