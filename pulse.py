@@ -104,8 +104,11 @@ def index(request):
 def zero(request):
     return HttpResponse('This is zero')
 
+#os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse')
+#os.path.join(BASE_DIR, 'templates',)
+ 
 def one(request):
-       return HttpResponse(BASE_DIR)
+       return HttpResponse(SETTINGS_DIR)
 
 '''
 def one(request):
@@ -118,7 +121,7 @@ def one(request):
        #raise Http404
 '''         
    
-  
+
 def two(request):
     return HttpResponse('two')
 
