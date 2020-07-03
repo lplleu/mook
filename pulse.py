@@ -58,8 +58,8 @@ TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
    'DIRS':[os.path.join(SETTINGS_PATH, 'templates'),
-           os.path.join(BASE_DIR, 'templates'),
-           os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),],
+           #os.path.join(BASE_DIR, 'templates'),
+           os.path.join(SETTINGS_PATH, 'pulse', 'templates', 'pulse'),],
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
