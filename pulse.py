@@ -187,8 +187,9 @@ urlpatterns = (
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
     url('zero/', zero),
-''' 
+ 
     url('one', one),
+'''
     #url('one', views.one, name="one"),
     url('two', two),
     url('three', three),
