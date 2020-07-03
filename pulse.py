@@ -81,6 +81,9 @@ settings.configure(
     ),
 )
 
+TEMPLATE_DIRS = (
+    os.path.join(SETTINGS_PATH, 'templates'),
+)
 
 from django.conf.urls import url
 from django.core.wsgi import get_wsgi_application
