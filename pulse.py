@@ -32,7 +32,7 @@ from django.apps import AppConfig
 from django import template
 from django.template.loader import get_template 
 from django.core.cache import cache
-from django.core.urlresolvers import reverse
+#from django.core.urlresolvers import reverse
 from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import etag
