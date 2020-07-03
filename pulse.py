@@ -111,6 +111,7 @@ def zero(request):
  
 def one(request):
        #return HttpResponse(SETTINGS_PATH)
+       today = datetime.datetime.now().date()
        return render(request, "pulse.htm", {"today" : today})
        #return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
 
