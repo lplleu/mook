@@ -108,8 +108,8 @@ def zero(request):
 #os.path.join(BASE_DIR, 'templates',)
  
 def one(request):
-       return HttpResponse(SETTINGS_PATH)
-       #return HttpResponse(os.path.join(BASE_DIR, 'templates')
+       #return HttpResponse(SETTINGS_PATH)
+       return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
 
 '''
 def one(request):
