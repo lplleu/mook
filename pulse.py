@@ -56,11 +56,12 @@ MIDDLEWARE = [
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TIME_ZONE = 'UTC'
 
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[os.path.join(SETTINGS_PATH, 'templates'),
+   'DIRS':[#os.path.join(SETTINGS_PATH, 'templates'),
            os.path.join(BASE_DIR, 'templates'),
            os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),],
    'APP_DIRS':True,
