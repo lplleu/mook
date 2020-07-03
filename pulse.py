@@ -108,7 +108,8 @@ settings.configure(
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ),
    INSTALLED_APPS=(
-        'pulse.apps.PulseConfig',
+        #'pulse.apps.PulseConfig',  
+        'pulse',    
         'django.contrib.staticfiles',
    ),
    TEMPLATE_DIRS=(
