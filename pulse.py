@@ -115,7 +115,7 @@ def four(request):
 urlpatterns = (
     url(r'^$', index),
     url('zero/', zero),
-    url('one', one),
+    url('one', views.one, name="one"),
     url('two', two),
     url('three', three),
     url('four', four),
