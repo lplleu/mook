@@ -105,6 +105,10 @@ def zero(request):
     return HttpResponse('This is zero')
 
 def one(request):
+       return HttpResponse(BASE_DIR)
+
+'''
+def one(request):
    today = datetime.datetime.now().date()
    try:
        get_template("pulse.htm")
@@ -112,7 +116,7 @@ def one(request):
    except TemplateDoesNotExist:
        return HttpResponse(BASE_DIR)
        #raise Http404
-         
+'''         
    
   
 def two(request):
