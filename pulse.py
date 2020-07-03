@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'deamaun.herokuapp.com').split(',')
 
 INSTALLED_APPS = [
- 'pulse.apps.FooConfig',
+ 'pulse.apps.PulseConfig',
  'django.contrib.admin',
  'django.contrib.auth',
  'django.contrib.contenttypes',
