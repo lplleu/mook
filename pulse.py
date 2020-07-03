@@ -166,7 +166,7 @@ def four(request):
 def five(request):
        today = datetime.datetime.now().date()
        print os.path.join(BASE_DIR, 'templates')
-       return render(request, '/pulse.htm', {"today" : today})
+       #return render(request, '/pulse.htm', {"today" : today})
    
 def six(request):
        today = datetime.datetime.now().date()
