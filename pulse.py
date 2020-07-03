@@ -1,4 +1,4 @@
-#shoutout to lightweight django
+#shoutout to lightweight django: https://www.oreilly.com/library/view/lightweight-django/9781491946275/ch01.html
 #02 July 2020
 #jedenfalls
 
