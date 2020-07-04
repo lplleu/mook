@@ -84,7 +84,6 @@ MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMP_PATH = os.path.realpath('.')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
        
-
 TIME_ZONE = 'UTC'
 
 '''
@@ -116,8 +115,8 @@ TEMPLATES = [
    #'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
    #'DIRS': ['templates'],
    #'DIRS':[],
-   #'DIRS': [os.path.join(BASE_DIR, "pulse/templates/pulse/templates")],
-   'DIRS': [os.path.join(BASE_DIR,'templates')],
+   'DIRS': [os.path.join(BASE_DIR, 'pulse/templates/pulse/templates')],
+   #'DIRS': [os.path.join(BASE_DIR,'templates')],
   }
   ]
 
