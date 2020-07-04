@@ -96,6 +96,13 @@ TEMPLATES = [
   ]
 '''
 
+TEMPLATES = [
+  {
+   'BACKEND':'django.template.backends.django.DjangoTemplates',
+   'APP_DIRS':True,
+  }
+  ]
+
 #DATABASE = {}
 
 settings.configure(
