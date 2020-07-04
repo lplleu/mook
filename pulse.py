@@ -114,7 +114,7 @@ settings.configure(
         'django.contrib.staticfiles',
    ),
    TEMPLATE_DIRS=(
-        os.path.join(MAIN_DIR,'templates'),
+        os.path.join(SETTINGS_PATH,'templates'),
    ),
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
