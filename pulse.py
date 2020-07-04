@@ -100,6 +100,7 @@ TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
    'APP_DIRS':True,
+   'DIRS': [os.path.join(BASE_DIR, 'templates')],
   }
   ]
 
@@ -120,9 +121,9 @@ settings.configure(
         'pulse',    
         #'pulse.apps.PulseConfig', 
    ),
-   TEMPLATE_DIRS=(
-        os.path.join(BASE_DIR,'templates'),
-   ),
+   #TEMPLATE_DIRS=(
+   #     os.path.join(BASE_DIR,'templates'),
+   #),
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
    ),
