@@ -145,9 +145,21 @@ def one(request):
        today = datetime.datetime.now().date()
        #return render(request, 'pulse.htm', {"today" : today})
        #return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
+       
+       #files = os.listdir(path)
+       #for name in files:
+       #    print(name)
+         
+       if len(sys.argv) == 2:
+           path = sys.argv[1]
+
+
        files = os.listdir(path)
        for name in files:
            print(name)
+         
+       return HttpResponse('this is one.') 
+  
 '''
 def one(request):
    today = datetime.datetime.now().date()
