@@ -167,7 +167,7 @@ def index(request):
     print('mainDir: '+os.path.join(MAIN_DIR, ' <<'))
 
     print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
-    return render(request, 'pulse.htm', {"today" : name})
+    return render(request, 'pulse.html', {"today" : name})
     #return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
 def zero(request):
