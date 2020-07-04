@@ -73,6 +73,8 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(__file__)
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
+TEMP_PATH = os.path.realpath('.')
+
 TIME_ZONE = 'UTC'
 
 '''
@@ -100,7 +102,8 @@ TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
    'APP_DIRS':True,
-   'DIRS': [os.path.join(MAIN_DIR, 'templates')],
+   #'DIRS': [os.path.join(MAIN_DIR, 'templates')],
+   'DIRS': [os.path.join(TEMP_DIR, 'templates')],
   }
   ]
 
