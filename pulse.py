@@ -97,13 +97,13 @@ TEMPLATES = [
   }
   ]
 '''
-
+#TEMP_DIR = 
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
    'APP_DIRS':True,
    #'DIRS': [os.path.join(MAIN_DIR, 'templates')],
-   'DIRS': [os.path.join(TEMP_DIR, 'templates')],
+   'DIRS': [os.path.join(TEMP_PATH, 'templates')],
   }
   ]
 
