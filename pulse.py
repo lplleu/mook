@@ -79,9 +79,11 @@ MIDDLEWARE_CLASSES = (
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.dirname(__file__)
+#BASE_DIR = os.path.dirname(__file__)
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMP_PATH = os.path.realpath('.')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+       
 
 TIME_ZONE = 'UTC'
 
@@ -112,7 +114,8 @@ TEMPLATES = [
    'APP_DIRS':True,
    #'DIRS': [os.path.join(MAIN_DIR, 'templates')],
    #'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
-   'DIRS': ['templates'],
+   #'DIRS': ['templates'],
+   'DIRS': [os.path.join(BASE_DIR, "templates")],
   }
   ]
 
