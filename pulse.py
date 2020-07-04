@@ -113,9 +113,9 @@ settings.configure(
         'pulse',    
         'django.contrib.staticfiles',
    ),
-   TEMPLATE_DIRS=(
-        os.path.join(SETTINGS_PATH,'templates'),
-   ),
+   #TEMPLATE_DIRS=(
+   #     os.path.join(BASE_DIR,'templates'),
+   #),
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
    ),
