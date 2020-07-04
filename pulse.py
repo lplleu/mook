@@ -153,7 +153,6 @@ def index(request):
     for name in files:
         #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
         print('face it: '+os.path.abspath((name)))
-        print(name)
     #return HttpResponse('looking in '+os.path.join(BASE_DIR,'templates','pulse.htm'))  
     #return HttpResponse(render_to_string(render(request, 'pulse.htm', {"today" : name})))
     print('#####################################################################################################################################################################')
