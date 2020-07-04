@@ -138,6 +138,7 @@ from django.conf.urls import url
 from django.http import HttpResponse
 from django.template import loader, Context
 
+PROJECT_DIR = os.path.dirname(__file__)
 path = '.'
 def index(request):
     files = os.listdir(path)
