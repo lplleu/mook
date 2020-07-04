@@ -115,7 +115,7 @@ TEMPLATES = [
    #'DIRS': [os.path.join(MAIN_DIR, 'templates')],
    #'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
    #'DIRS': ['templates'],
-   'DIRS': [os.path.join(BASE_DIR, "templates")],
+   'DIRS': [os.path.join(BASE_DIR, "pulse/templates/pulse/templates")],
   }
   ]
 
