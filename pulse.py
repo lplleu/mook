@@ -128,7 +128,10 @@ from django.http import HttpResponse
 from django.template import loader, Context
 
 def index(request):
-    return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
+    files = os.listdir(path)
+    for name in files:
+        print(name)
+    #return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
 def zero(request):
     return HttpResponse('This is zero')
@@ -140,8 +143,10 @@ def one(request):
        #return HttpResponse(SETTINGS_PATH)
        today = datetime.datetime.now().date()
        #return render(request, 'pulse.htm', {"today" : today})
-       return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
-
+       #return HttpResponse(os.path.join(SETTINGS_PATH, 'templates'))
+       files = os.listdir(path)
+       for name in files:
+           print(name)
 '''
 def one(request):
    today = datetime.datetime.now().date()
