@@ -36,6 +36,7 @@ from django.core.cache import cache
 from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import etag
+from django.views.generic.base import TemplateView
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
