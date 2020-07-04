@@ -160,7 +160,7 @@ def index(request):
     print(PROJECT_DIR)
     print('file'+os.path.join(TEMP_PATH, 'templates'))
     print('file'+os.path.join(PROJECT_DIR, 'templates'))
-    print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+    print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
     return render(request, 'index.html', {"today" : name})
     #return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
@@ -199,8 +199,6 @@ def one(request):
    except TemplateDoesNotExist:
        return HttpResponse(BASE_DIR)
        #raise Http404
-'''         
-'''   
 
 def two(request):
     return HttpResponse('two')
@@ -234,9 +232,9 @@ def seven(request):
 urlpatterns = (
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
-    url('zero/', zero),
+    url('zero/', zero, name='zero'),
+    url('one', one, name='one'),
  
-    url('one', one),
 '''
     #url('one', views.one, name="one"),
     url('two', two),
