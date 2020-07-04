@@ -127,6 +127,7 @@ from django.conf.urls import url
 from django.http import HttpResponse
 from django.template import loader, Context
 
+path = '.'
 def index(request):
     files = os.listdir(path)
     for name in files:
