@@ -128,7 +128,7 @@ def index(request):
         print(pathMain)
         for f in files:
             print(f)
-    return HttpResponse('\n\n\n\n\n\nHERE IS THE PATH: <u>'+str(tsela)+'</u>')) 
+    return HttpResponse('\n\n\n\n\n\nHERE IS THE PATH: <u>'+tsela+'</u>')) 
 
 def indecs(request):
     files = os.listdir(BASE_DIR)
