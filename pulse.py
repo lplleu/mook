@@ -155,6 +155,10 @@ from django.template import loader, Context
 
 PROJECT_DIR = os.path.dirname(__file__)
 path = '.'
+
+class LandingView(TemplateView):
+  template_name = "index.html"
+  
 def index(request):
     files = os.listdir(path)
     for name in files:
@@ -243,7 +247,7 @@ urlpatterns = (
     #url(r'^admin/', admin.site.urls),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
- 
+    url(r'^mook/', coreviews.LandingView.as_view()),
 '''
     #url('one', views.one, name="one"),
     url('two', two),
