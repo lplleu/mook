@@ -199,6 +199,7 @@ def indecs2(request):
 
 def indecs3(request):
     cdr = Cdr.objects.all()
+    print('creating csv') 
     file_path = os.path.join(tsela, 'HEREHEREREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHERE.csv')
     with open(file_path, 'w') as csvfile:
         file_header =['user', 'clid']
@@ -206,6 +207,7 @@ def indecs3(request):
         for cd in cdr:
             writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
     
+    print('checking mo '+tsela) 
     for pathMain, dirs, files in os.walk(tsela):
         print(pathMain)
         for f in files:
@@ -215,6 +217,7 @@ def indecs3(request):
 
 def indecs4(request):
     cdr = Cdr.objects.all()
+    print('creating csv') 
     file_path = 'templates/HEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHERE.csv'
     with open(file_path, 'w') as csvfile:
         file_header =['user', 'clid']
@@ -222,11 +225,14 @@ def indecs4(request):
         for cd in cdr:
             writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
     
+    print('checking mo '+tsela) 
     for pathMain, dirs, files in os.walk(tsela):
         print(pathMain)
         for f in files:
             print(f)    
     print('---------------------------------------------------------------------------------------------------------------------------------------------------------')
+    
+    print('checking mo '+templates) 
     for pathMain, dirs, files in os.walk('templates'):
         print(pathMain)
         for f in files:
