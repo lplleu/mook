@@ -26,7 +26,7 @@ from io import BytesIO
 #from PIL import Image, ImageDraw
 
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render#, render_to_response
 from django.contrib import admin
 #from django.template.loader import get_template from django.apps import AppConfig
 from django.apps import AppConfig
@@ -39,7 +39,6 @@ from django.http import HttpResponse, HttpResponseBadRequest, Http404
 from django.views.decorators.http import etag
 from django.views.defaults import page_not_found
 from django.views.generic.base import TemplateView
-from django.shortcuts import render_to_response
 from django.template import TemplateDoesNotExist
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
