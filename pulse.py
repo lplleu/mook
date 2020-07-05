@@ -202,11 +202,32 @@ def indecs3(request):
     file_path = os.path.join(tsela, "HEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHERE.csv")
     with open(file_path, 'w') as csvfile:
         file_header =['user', 'clid']
-        writer = csv.DictWriter(csvfile, fieldnames=file_hearder)
+        writer = csv.DictWriter(csvfile, fieldnames=file_header)
         for cd in cdr:
             writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
     
     for pathMain, dirs, files in os.walk(tsela):
+        print(pathMain)
+        for f in files:
+            print(f)
+         
+    return HttpResponse('e kgonne go kwala csv.')
+
+def indecs4(request):
+    cdr = Cdr.objects.all()
+    file_path = "templates/HEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHERE.csv")
+    with open(file_path, 'w') as csvfile:
+        file_header =['user', 'clid']
+        writer = csv.DictWriter(csvfile, fieldnames=file_header)
+        for cd in cdr:
+            writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
+    
+    for pathMain, dirs, files in os.walk(tsela):
+        print(pathMain)
+        for f in files:
+            print(f)    
+    print('---------------------------------------------------------------------------------------------------------------------------------------------------------')
+    for pathMain, dirs, files in os.walk('templates'):
         print(pathMain)
         for f in files:
             print(f)
