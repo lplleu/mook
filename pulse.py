@@ -169,7 +169,8 @@ def one(request):
 
        
        try:
-           get_template("pulse.htm")
+           select_template("pulse.htm")
+           #get_template("pulse.htm")
            return render(request, "pulse.htm", {"today" : today})
        except TemplateDoesNotExist:       
            return HttpResponse('this is one.') 
