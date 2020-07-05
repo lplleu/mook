@@ -35,9 +35,12 @@ from django.template.loader import get_template, select_template
 from django.core.cache import cache
 #from django.core.urlresolvers import reverse
 from django.core.wsgi import get_wsgi_application
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest, Http404
 from django.views.decorators.http import etag
+from django.views.defaults import page_not_found
 from django.views.generic.base import TemplateView
+from django.shortcuts import render_to_response
+from django.template import TemplateDoesNotExist
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
