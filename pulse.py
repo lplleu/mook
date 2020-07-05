@@ -20,6 +20,7 @@ import hashlib
 import os
 import sys
 import datetime
+import csv
 
 from io import BytesIO
 #from PIL import Image, ImageDraw
@@ -180,7 +181,7 @@ def indecs2(request):
         print(pathMain)
         #for f in files:
         #    print(f)      
-    
+      
     #return HttpResponse(print("\n\n\n\n\n\nHERE'S THE PATH: "+str(tsela)))  
     #return HttpResponse(render_to_string(render(request, 'pulse.htm', {"today" : name})))
     
@@ -195,6 +196,23 @@ def indecs2(request):
     return render(request, 'pulse.html', {"today" : MAIN_DIR})
     #return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
+
+def indecs3(request):
+    cdr = Cdr.objects.all()
+    file_path = os.path.join(tsela, "HEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHERE.csv")
+    with open(file_path, 'w') as csvfile:
+        file_header =['user', 'clid']
+        writer = csv.DictWriter(csvfile, fieldnames=file_hearder)
+        for cd in cdr:
+            writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
+    
+    for pathMain, dirs, files in os.walk(tsela):
+        print(pathMain)
+        for f in files:
+            print(f)
+         
+    return HttpResponse('e kgonne go kwala csv.')
+   
 def zero(request):
     select_template(['pulse/pulse.html','./pulse.html','pulse.html','templates/pulse.html']) 
     return HttpResponse('This is zero')
