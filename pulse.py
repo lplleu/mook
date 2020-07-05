@@ -285,10 +285,12 @@ def one(request):
    except TemplateDoesNotExist:
        return HttpResponse(BASE_DIR)
        #raise Http404
+'''
 
 def two(request):
     return HttpResponse('two')
-
+ 
+'''
 def three(request):
     return HttpResponse('three')
 
