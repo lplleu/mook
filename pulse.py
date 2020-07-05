@@ -169,8 +169,7 @@ settings.configure(
         'pulse/templates/pulse/templates',
         'deamaun/pulse/templates/pulse', 
    ),
-   '''
- 
+   ''' 
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
    ),
