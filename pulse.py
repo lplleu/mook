@@ -157,7 +157,7 @@ PROJECT_DIR = os.path.dirname(__file__)
 path = '.'
 
 class LandingView(TemplateView):
-  template_name = "pulse/pulse.html"
+  template_name = "pulse/pulse.htm"
   
 def index(request):
     files = os.listdir(path)
