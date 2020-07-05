@@ -199,7 +199,7 @@ def indecs2(request):
 
 def indecs3(request):
     cdr = Cdr.objects.all()
-    file_path = os.path.join(tsela, 'HEREHEREREHEREHEREHEREHEREHEREHEREHEREHERE.csv')
+    file_path = os.path.join(tsela, 'HEREHEREREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHERE.csv')
     with open(file_path, 'w') as csvfile:
         file_header =['user', 'clid']
         writer = csv.DictWriter(csvfile, fieldnames=file_header)
@@ -215,7 +215,7 @@ def indecs3(request):
 
 def indecs4(request):
     cdr = Cdr.objects.all()
-    file_path = 'templates/HEREHEREHEREHEHERE.csv')
+    file_path = 'templates/HEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHERE.csv'
     with open(file_path, 'w') as csvfile:
         file_header =['user', 'clid']
         writer = csv.DictWriter(csvfile, fieldnames=file_header)
