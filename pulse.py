@@ -139,14 +139,14 @@ def index(request):
     return render(request, 'pulse.html', {"today" : MAIN_DIR})
 
 def indecs(request):
-    files = os.listdir(path)
+    files = os.listdir(BASE_DIR)
 
     #for name in files:
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
          
-    for pathMain, dirs, files in os.walk(path):
-        print(BASE_DIR)
+    for pathMain, dirs, files in os.walk(BASE_DIR):
+        print(pathMain)
         #for f in files:
         #    print(f)      
     
