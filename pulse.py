@@ -148,6 +148,42 @@ def indecs(request):
     for pathMain, dirs, files in os.walk(BASE_DIR):
         print(pathMain)
         #for f in files:
+        #    print(f)   
+              
+def indecs0(request):
+    files = os.listdir(SETTINGS_PATH)
+
+    #for name in files:
+    #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
+    #    print('face it: '+os.path.abspath((name)))
+         
+    for pathMain, dirs, files in os.walk(SETTINGS_PATH):
+        print(pathMain)
+        #for f in files:
+        #    print(f)
+              
+def indecs1(request):
+    files = os.listdir(MAIN_DIR)
+
+    #for name in files:
+    #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
+    #    print('face it: '+os.path.abspath((name)))
+         
+    for pathMain, dirs, files in os.walk(MAIN_DIR):
+        print(pathMain)
+        #for f in files:
+        #    print(f)
+              
+def indecs2(request):
+    files = os.listdir(TEMP_PATH)
+
+    #for name in files:
+    #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
+    #    print('face it: '+os.path.abspath((name)))
+         
+    for pathMain, dirs, files in os.walk(TEMP_PATH):
+        print(pathMain)
+        #for f in files:
         #    print(f)      
     
     #return HttpResponse('looking in '+os.path.join(BASE_DIR,'templates','pulse.htm'))  
@@ -239,6 +275,9 @@ urlpatterns = (
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
     url('indecs', indecs, name='indecs'),
+    url('indecs0', indecs0, name='indecs0'),
+    url('indecs1', indecs1, name='indecs1'),
+    url('indecs2', indecs2, name='indecs2'),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
     url(r'^mook/', LandingView.as_view(), name='mook'),
