@@ -133,9 +133,9 @@ def index(request):
     #    print('face it: '+os.path.abspath((name)))
          
     for pathMain, dirs, files in os.walk(path):
-        print pathMain
+        print(pathMain)
         for f in files:
-            print f
+            print(f)
 
     #return HttpResponse('looking in '+os.path.join(BASE_DIR,'templates','pulse.htm'))  
     #return HttpResponse(render_to_string(render(request, 'pulse.htm', {"today" : name})))
