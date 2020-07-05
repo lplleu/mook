@@ -124,6 +124,7 @@ TEMPLATES = [
            os.path.join(BASE_DIR,'pulse'),
            'deamaun',
            'pulse',
+           '.',
            'templates/pulse',
            'app/templates',
            'templates/pulse',
