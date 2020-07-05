@@ -52,23 +52,15 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMP_PATH = os.path.realpath('.')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-       
+ 
+tsela = os.path.join(BASE_DIR, "templates")
+
 TIME_ZONE = 'UTC'
 
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[os.path.join(BASE_DIR, 'templates'),
-           '/templates/deamaun',
-           'templates',
-           '/app/templates',
-           '/templates/pulse',
-           '/pulse',
-           '/app/templates/deamaun',
-           '/pulse/templates',
-           '/app/deamaun',
-           '/app/templates/pulse',
-          ],
+   'DIRS':[tsela],
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
@@ -136,7 +128,7 @@ def index(request):
         print(pathMain)
         for f in files:
             print(f)
-    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+    return HttpResponse(print("\n\n\n\n\n\nHERE'S THE PATH: "+str(tsela))) 
 
 def indecs(request):
     files = os.listdir(BASE_DIR)
@@ -189,7 +181,7 @@ def indecs2(request):
         #for f in files:
         #    print(f)      
     
-    #return HttpResponse('looking in '+os.path.join(BASE_DIR,'templates','pulse.htm'))  
+    #return HttpResponse(print("\n\n\n\n\n\nHERE'S THE PATH: "+str(tsela)))  
     #return HttpResponse(render_to_string(render(request, 'pulse.htm', {"today" : name})))
     
     #print('#####################################################################################################################################################################')
