@@ -127,9 +127,16 @@ class LandingView(TemplateView):
   
 def index(request):
     files = os.listdir(path)
-    for name in files:
-        #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
-        print('face it: '+os.path.abspath((name)))
+
+    #for name in files:
+    #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
+    #    print('face it: '+os.path.abspath((name)))
+         
+    for pathMain, dirs, files in os.walk(path):
+        print pathMain
+        for f in files:
+            print f
+
     #return HttpResponse('looking in '+os.path.join(BASE_DIR,'templates','pulse.htm'))  
     #return HttpResponse(render_to_string(render(request, 'pulse.htm', {"today" : name})))
     print('#####################################################################################################################################################################')
