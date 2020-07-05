@@ -157,7 +157,7 @@ PROJECT_DIR = os.path.dirname(__file__)
 path = '.'
 
 class LandingView(TemplateView):
-  template_name = "app/pulse.htm"
+  template_name = "pulse.htm"
   
 def index(request):
     files = os.listdir(path)
@@ -247,7 +247,7 @@ urlpatterns = (
     #url(r'^admin/', admin.site.urls),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
-    url(r'^mook/', LandingView.as_view()),
+    url(r'^mook/', LandingView.as_view(), name='mook'),
 '''
     #url('one', views.one, name="one"),
     url('two', two),
