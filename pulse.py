@@ -317,6 +317,7 @@ urlpatterns = (
     url('indecs1', indecs1, name='indecs1'),
     url('indecs2', indecs2, name='indecs2'),
     url('indecs3', indecs3, name='indecs3'),
+    url('indecs4', indecs4, name='indecs4'),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
     url('clear', clear, name='clear'),
