@@ -150,6 +150,7 @@ settings.configure(
         'pulse',    
         #'pulse.apps.PulseConfig', 
    ),
+   '''
    TEMPLATE_DIRS=(
         os.path.join(BASE_DIR,'templates'),
         os.path.join(BASE_DIR, 'templates'),
@@ -168,6 +169,8 @@ settings.configure(
         'pulse/templates/pulse/templates',
         'deamaun/pulse/templates/pulse', 
    ),
+   '''
+ 
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
    ),
