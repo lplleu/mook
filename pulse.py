@@ -149,7 +149,8 @@ def indecs(request):
         print(pathMain)
         #for f in files:
         #    print(f)   
-              
+    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+
 def indecs0(request):
     files = os.listdir(SETTINGS_PATH)
 
@@ -161,7 +162,8 @@ def indecs0(request):
         print(pathMain)
         #for f in files:
         #    print(f)
-              
+    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+
 def indecs1(request):
     files = os.listdir(MAIN_DIR)
 
@@ -173,7 +175,8 @@ def indecs1(request):
         print(pathMain)
         #for f in files:
         #    print(f)
-              
+    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+
 def indecs2(request):
     files = os.listdir(TEMP_PATH)
 
@@ -205,7 +208,11 @@ def zero(request):
     return HttpResponse('This is zero')
 #os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse')
 #os.path.join(BASE_DIR, 'templates',)
- 
+
+def clear(request):
+    print('-----------------------------------------------------------------------------------------------------------------------------------')   
+    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+
 def one(request):
        #return HttpResponse(SETTINGS_PATH)
        today = datetime.datetime.now().date()
@@ -280,6 +287,7 @@ urlpatterns = (
     url('indecs2', indecs2, name='indecs2'),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
+    url('clear', clear, name='clear'),
     url(r'^mook/', LandingView.as_view(), name='mook'),
 '''
     #url('one', views.one, name="one"),
