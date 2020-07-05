@@ -95,7 +95,7 @@ settings.configure(
         'django.contrib.contenttypes',
         'django.contrib.sessions',
         'django.contrib.messages',
-        'django.contrib.AccountsConfig',
+        #'django.contrib.AccountsConfig',
         'pulse',    
    ),
    STATICFILES_DIRS=(
