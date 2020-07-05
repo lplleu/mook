@@ -136,7 +136,8 @@ def index(request):
         print(pathMain)
         for f in files:
             print(f)
-   
+    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+
 def indecs(request):
     files = os.listdir(path)
 
