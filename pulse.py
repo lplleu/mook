@@ -59,17 +59,6 @@ INSTALLED_APPS = [
 ]
 '''
 
-MIDDLEWARE = [
-  'django.middleware.security.SecurityMiddleware',
-  'django.contrib.sessions.middleware.SessionMiddleware',
-  'django.middleware.common.CommonMiddleware',
-  'django.middleware.csrf.CsrfViewMiddleware',
-  'django.contrib.auth.middleware.AuthenticationMiddleware',
-  'django.contrib.messages.middleware.MessagesMiddleware',
-  'django.middleware.clickjacking.XFrameOptionsMiddleware',
-  'whitenoise.middleware.WhiteNoiseMiddleware',
-]
-
 '''
 MIDDLEWARE_CLASSES = (
     # Simplified static file serving.
@@ -106,7 +95,7 @@ TEMPLATES = [
        ]},
   }
   ]
-'''
+
 #TEMP_DIR = 
 TEMPLATES = [
   {
@@ -136,6 +125,7 @@ TEMPLATES = [
    #'DIRS': [os.path.join(BASE_DIR,'templates')],
   }
   ]
+'''
 
 #DATABASE = {}
 
@@ -148,15 +138,36 @@ settings.configure(
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.security.SecurityMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessagesMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',     
     ),
    INSTALLED_APPS=(
         'django.contrib.staticfiles', 
         'pulse',    
         #'pulse.apps.PulseConfig', 
    ),
-   #TEMPLATE_DIRS=(
-   #     os.path.join(BASE_DIR,'templates'),
-   #),
+   TEMPLATE_DIRS=(
+        os.path.join(BASE_DIR,'templates'),
+        os.path.join(BASE_DIR, 'templates'),
+        os.path.join(MAIN_DIR, 'templates'),
+        os.path.join(SETTINGS_PATH, 'templates'),
+        'templates',
+        os.path.join(BASE_DIR, 'pulse/templates/pulse/templates'),
+        os.path.join(BASE_DIR,'pulse'),
+        'deamaun',
+        'pulse',
+        '.',
+        'templates/pulse',
+        'app/templates',
+        'templates/pulse',
+        'pulse/templates/pulse',
+        'pulse/templates/pulse/templates',
+        'deamaun/pulse/templates/pulse', 
+   ),
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
    ),
