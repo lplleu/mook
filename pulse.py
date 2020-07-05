@@ -247,7 +247,7 @@ urlpatterns = (
     #url(r'^admin/', admin.site.urls),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
-    url(r'^mook/', views.LandingView.as_view()),
+    url(r'^mook/', LandingView.as_view()),
 '''
     #url('one', views.one, name="one"),
     url('two', two),
