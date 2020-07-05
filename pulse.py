@@ -53,6 +53,8 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMP_PATH = os.path.realpath('.')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+#DIRECTOR = r'^app/templates/pulse/templates/pulse'
  
 tsela = os.path.join(BASE_DIR, "templates")
 
@@ -328,11 +330,11 @@ urlpatterns = (
     url('indecs4', indecs4, name='indecs4'),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
+    url('two', two, name='two'),
     url('clear', clear, name='clear'),
     url(r'^mook/', LandingView.as_view(), name='mook'),
 '''
     #url('one', views.one, name="one"),
-    url('two', two),
     url('three', three),
     url('four', four),
     url('five', five),
