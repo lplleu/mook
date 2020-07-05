@@ -45,27 +45,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'deamaun.herokuapp.com').split(',')
 
-'''
-INSTALLED_APPS = [
- 'pulse.apps.PulseConfig',
- 'django.contrib.admin',
- 'django.contrib.auth',
- 'django.contrib.contenttypes',
- 'django.contrib.sessions',
- 'django.contrib.messages',
- 'django.contrib.staticfiles',
- 'django.contrib.AccountsConfig',
-
-]
-'''
-
-'''
-MIDDLEWARE_CLASSES = (
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-)
-'''
-
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -76,15 +55,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
        
 TIME_ZONE = 'UTC'
 
-'''
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[os.path.join(SETTINGS_PATH, 'templates'),
-           'templates',
-           os.path.join(BASE_DIR, 'templates'),
-           os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse'),
-   ],
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
@@ -92,40 +65,9 @@ TEMPLATES = [
           'django.template.context_processors.request',
           'django.contrib.auth.context_processors.auth',
           'django.contrib.messages.context_processors.messages',
-       ]},
+       ]},   
   }
   ]
-
-#TEMP_DIR = 
-TEMPLATES = [
-  {
-   'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'APP_DIRS':True,
-   #'DIRS': [os.path.join(MAIN_DIR, 'templates')],
-   #'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
-   #'DIRS': ['templates'],
-   #'DIRS':[],
-   'DIRS': [os.path.join(BASE_DIR, 'templates'),
-           os.path.join(MAIN_DIR, 'templates'),
-           os.path.join(SETTINGS_PATH, 'templates'),
-           'templates',
-           os.path.join(BASE_DIR, 'pulse/templates/pulse/templates'),
-           os.path.join(BASE_DIR,'pulse'),
-           'deamaun',
-           'pulse',
-           '.',
-           'templates/pulse',
-           'app/templates',
-           'templates/pulse',
-           'pulse/templates/pulse',
-           'pulse/templates/pulse/templates',
-           'deamaun/pulse/templates/pulse',  
-           ],
-   #'DIRS': [os.path.join(BASE_DIR, 'pulse/templates/pulse/templates')],
-   #'DIRS': [os.path.join(BASE_DIR,'templates')],
-  }
-  ]
-'''
 
 #DATABASE = {}
 
@@ -146,9 +88,15 @@ settings.configure(
         'whitenoise.middleware.WhiteNoiseMiddleware',     
     ),
    INSTALLED_APPS=(
-        'django.contrib.staticfiles', 
+        'django.contrib.staticfiles',
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'django.contrib.AccountsConfig',
         'pulse',    
-        #'pulse.apps.PulseConfig', 
    ),
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
