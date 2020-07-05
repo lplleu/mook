@@ -136,17 +136,30 @@ def index(request):
         print(pathMain)
         for f in files:
             print(f)
+   
+def indecs(request):
+    files = os.listdir(path)
 
+    #for name in files:
+    #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
+    #    print('face it: '+os.path.abspath((name)))
+         
+    for pathMain, dirs, files in os.walk(path):
+        print(BASE_DIR)
+        #for f in files:
+        #    print(f)      
+    
     #return HttpResponse('looking in '+os.path.join(BASE_DIR,'templates','pulse.htm'))  
     #return HttpResponse(render_to_string(render(request, 'pulse.htm', {"today" : name})))
-    print('#####################################################################################################################################################################')
-    print('tempPath: '+os.path.join(TEMP_PATH, ' <<'))
-    print('projectDir: '+os.path.join(PROJECT_DIR, ' <<'))
-    print('settingsPath: '+os.path.join(SETTINGS_PATH, ' <<'))
-    print('baseDir: '+os.path.join(BASE_DIR, ' <<'))    
-    print('mainDir: '+os.path.join(MAIN_DIR, ' <<'))
+    
+    #print('#####################################################################################################################################################################')
+    #print('tempPath: '+os.path.join(TEMP_PATH, ' <<'))
+    #print('projectDir: '+os.path.join(PROJECT_DIR, ' <<'))
+    #print('settingsPath: '+os.path.join(SETTINGS_PATH, ' <<'))
+    #print('baseDir: '+os.path.join(BASE_DIR, ' <<'))    
+    #print('mainDir: '+os.path.join(MAIN_DIR, ' <<'))
+    #print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
 
-    print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
     return render(request, 'pulse.html', {"today" : MAIN_DIR})
     #return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
@@ -224,6 +237,7 @@ def seven(request):
 urlpatterns = (
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
+    url('indecs', indecs, name='indecs'),
     url('zero/', zero, name='zero'),
     url('one', one, name='one'),
     url(r'^mook/', LandingView.as_view(), name='mook'),
