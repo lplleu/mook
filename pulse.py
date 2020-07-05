@@ -30,7 +30,7 @@ from django.contrib import admin
 #from django.template.loader import get_template from django.apps import AppConfig
 from django.apps import AppConfig
 from django import template
-from django.template.loader import get_template 
+from django.template.loader import get_template, select_template
 from django.core.cache import cache
 #from django.core.urlresolvers import reverse
 from django.core.wsgi import get_wsgi_application
