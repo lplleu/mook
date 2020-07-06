@@ -162,13 +162,12 @@ def indecs0(request):
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
     
-    print('looking in '+SETTINGS_PATH+' (SETTING_PATH)
-    print('looking in '+MAIN_DIR+' (MAIN_DIR)')          
-    for pathMain, dirs, files in os.walk(MAIN_DIR):
+    print('looking in '+SETTINGS_PATH+' (SETTING_PATH)/MAIN_DIR')       
+    for pathMain, dirs, files in os.walk(SETTINGS_PATH):
         print(pathMain)
         #for f in files:
         #    print(f)
-    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+    return render(request, 'pulse.html', {"today" : SETTINGS_PATH})
 
 def indecs2(request):
     files = os.listdir(TEMP_PATH)
