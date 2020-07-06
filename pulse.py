@@ -40,6 +40,7 @@ from django.views.decorators.http import etag
 from django.views.defaults import page_not_found
 from django.views.generic.base import TemplateView
 from django.template import TemplateDoesNotExist
+from whitenoise.django import DjangoWhiteNoise
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
