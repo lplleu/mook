@@ -326,10 +326,11 @@ def seven(request):
        return render(request, "pulse.htm/", {"today" : today})
 '''
 
-urlpatterns = (
+urlpatterns = patterns(
+    r'^$', indecs, {'template' : 'pulse.htm'}),
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
-    url('indecs', indecs, name='indecs'),
+    #url('indecs', indecs, name='indecs'),
     url('indecs0', indecs0, name='indecs0'),
     url('indecs1', indecs1, name='indecs1'),
     url('indecs2', indecs2, name='indecs2'),
