@@ -221,10 +221,10 @@ def indecs3(request):
             writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
     
     print('checking mo '+tsela) 
-    for pathMain, dirs, files in os.walk(tsela):
-        print(pathMain)
-        #for f in files:
-        #    print(f)
+    #for pathMain, dirs, files in os.walk(tsela):
+    #    print(pathMain)
+    #    #for f in files:
+    #    #    print(f)
          
     return HttpResponse('e kgonne go kwala csv.')
 
@@ -239,17 +239,17 @@ def indecs4(request):
             writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
     
     print('checking mo '+tsela+' (tsela)') 
-    for pathMain, dirs, files in os.walk(tsela):
-        print(pathMain)
-        #for f in files:
-        #    print(f)    
+    #for pathMain, dirs, files in os.walk(tsela):
+    #    #print(pathMain)
+    #    #for f in files:
+    #    #    print(f)    
     print('---------------------------------------------------------------------------------------------------------------------------------------------------------')
     
     print('checking mo '+templates+' (templates)') 
-    for pathMain, dirs, files in os.walk('templates'):
-        print(pathMain)
-        #for f in files:
-        #    print(f)
+    #for pathMain, dirs, files in os.walk('templates'):
+    #    print(pathMain)
+    #    #for f in files:
+    #    #    print(f)
          
     return HttpResponse('e kgonne go kwala csv.')
    
