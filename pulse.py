@@ -134,8 +134,8 @@ def index(request):
          
     for pathMain, dirs, files in os.walk(path):
         print(pathMain)
-        for f in files:
-            print(f)
+        #############for f in files:
+        #############    print(f)
     print('root below......................................................................................................................................................................................................')     
     #print(root("templates"))     
     return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="clear" target="_blank">clear</a>|<a href="indecs" target="_blank">indecs</a><br><a href="indecs0" target="_blank">indecs0</a>|<a href="indecs1" target="_blank">indecs1</a><br><a href="indecs2" target="_blank">indecs2</a>|<a href="indecs3" target="_blank">indecs3</a>|<a href="indecs4" target="_blank">indecs4</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a><br><a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>\nalso, HERE IS THE PATH: <u>'+str(tsela)+'</u><br>also...') 
@@ -327,10 +327,10 @@ def seven(request):
 '''
 
 urlpatterns = (
-    url(r'^$', indecs, {'template' : 'pulse.htm'}),
+    #url(r'^$', indecs, {'template' : 'pulse.htm'}),
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
-    #url('indecs', indecs, name='indecs'),
+    url('indecs', indecs, name='indecs'),
     url('indecs0', indecs0, name='indecs0'),
     url('indecs1', indecs1, name='indecs1'),
     url('indecs2', indecs2, name='indecs2'),
