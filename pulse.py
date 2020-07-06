@@ -248,7 +248,7 @@ def indecs4(request):
     return HttpResponse('e kgonne go kwala csv.')
    
 def zero(request):
-    select_template(['pulse/pulse.html','./pulse.html','pulse.html','templates/pulse.html']) 
+    select_template(['pulse/pulse.html',r'^app/templates/pulse/templates/pulse','./pulse.html','pulse.html','templates/pulse.html']) 
     return HttpResponse('This is zero')
 #os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse')
 #os.path.join(BASE_DIR, 'templates',)
