@@ -9,7 +9,7 @@
 #assign admin roles
 #self register
 #email/cellphone activation, alert
-#what about consultants who are not beapa registered?
+#what about consultants who are not registered?
 #controlled access pages
 #annotate pdf
 #generate pdf letter
@@ -40,7 +40,7 @@ from django.views.decorators.http import etag
 from django.views.defaults import page_not_found
 from django.views.generic.base import TemplateView
 from django.template import TemplateDoesNotExist
-from whitenoise.django import DjangoWhiteNoise
+#from whitenoise.django import DjangoWhiteNoise
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
@@ -349,7 +349,7 @@ urlpatterns = (
 )
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+#application = DjangoWhiteNoise(application)
 
 if __name__ == "__main__":
     from django.core.management import execute_from_command_line
