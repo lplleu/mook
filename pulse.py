@@ -154,8 +154,8 @@ def indecs(request):
         #for f in files:
         #    print(f)   
     return render(request, 'pulse.html', {"today" : MAIN_DIR})
-
-def indecs0(request):
+    
+def indeks(request):
     files = os.listdir(SETTINGS_PATH)
 
     #for name in files:
@@ -169,7 +169,7 @@ def indecs0(request):
         #    print(f)
     return render(request, 'pulse.html', {"today" : SETTINGS_PATH})
    
-def indecs1(request):
+def indecks(request):
     files = os.listdir(SETTINGS_PATH)
 
     #for name in files:
@@ -183,7 +183,7 @@ def indecs1(request):
         #    print(f)
     return render(request, 'pulse.html', {"today" : SETTINGS_PATH})
 
-def indecs2(request):
+def indexs(request):
     files = os.listdir(TEMP_PATH)
 
     #for name in files:
@@ -210,7 +210,7 @@ def indecs2(request):
     #return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a>|<a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a>')
 
 
-def indecs3(request):
+def indeccs(request):
     cdr = Cdr.objects.all()
     print('creating csv') 
     file_path = os.path.join(tsela, 'HEREHEREREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHERE.csv')
@@ -228,7 +228,7 @@ def indecs3(request):
          
     return HttpResponse('e kgonne go kwala csv.')
 
-def indecs4(request):
+def indecxs(request):
     cdr = Cdr.objects.all()
     print('creating csv') 
     file_path = 'templates/HEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHEREHEREHEREHEREHEHERE.csv'
