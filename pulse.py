@@ -66,8 +66,7 @@ TIME_ZONE = 'UTC'
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[r'^app/templates/pulse/templates/pulse',
-          '/templates/'],
+   'DIRS':['templates'],
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
@@ -148,7 +147,8 @@ def indecs(request):
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
     
-    print('looking in '+BASE_DIR+' (BASE_DIR)')          
+    print('looking in '+BASE_DIR+' (BASE_DIR)')       
+    
     for pathMain, dirs, files in os.walk(BASE_DIR):
         print(pathMain)
         #for f in files:
@@ -261,7 +261,13 @@ def zero(request):
 
 def clear(request):
     print('-----------------------------------------------------------------------------------------------------------------------------------')   
-    return render(request, 'pulse.html', {"today" : MAIN_DIR})
+    return HttpResponse(TEMPLATES)
+    #return render(request, 'pulse.html', {"today" : MAIN_DIR})
+
+def klear(request):
+    print('-----------------------------------------------------------------------------------------------------------------------------------')   
+    return HttpResponse(TEMPLATES['DIR'])
+    #return render(request, 'pulse.html', {"today" : MAIN_DIR})
 
 def one(request):
        #return HttpResponse(SETTINGS_PATH)
@@ -346,6 +352,7 @@ urlpatterns = (
     url('one', one, name='one'),
     url('two', two, name='two'),
     url('clear', clear, name='clear'),
+    url('klear', klear, name='klear'),
     url(r'^mook/', LandingView.as_view(), name='mook'),
 '''
     #url('one', views.one, name="one"),
