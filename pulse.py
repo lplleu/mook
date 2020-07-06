@@ -131,7 +131,8 @@ def index(request):
     #for name in files:
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
-         
+    
+    print('looking in '+path+' (path)')     
     for pathMain, dirs, files in os.walk(path):
         print(pathMain)
         #############for f in files:
@@ -146,7 +147,8 @@ def indecs(request):
     #for name in files:
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
-         
+    
+    print('looking in '+BASE_DIR+' (BASE_DIR)')          
     for pathMain, dirs, files in os.walk(BASE_DIR):
         print(pathMain)
         #for f in files:
@@ -159,20 +161,9 @@ def indecs0(request):
     #for name in files:
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
-         
-    for pathMain, dirs, files in os.walk(SETTINGS_PATH):
-        print(pathMain)
-        #for f in files:
-        #    print(f)
-    return render(request, 'pulse.html', {"today" : MAIN_DIR})
-
-def indecs1(request):
-    files = os.listdir(MAIN_DIR)
-
-    #for name in files:
-    #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
-    #    print('face it: '+os.path.abspath((name)))
-         
+    
+    print('looking in '+SETTINGS_PATH+' (SETTING_PATH)'
+    print('looking in '+MAIN_DIR+' (MAIN_DIR)')          
     for pathMain, dirs, files in os.walk(MAIN_DIR):
         print(pathMain)
         #for f in files:
@@ -185,7 +176,7 @@ def indecs2(request):
     #for name in files:
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
-         
+    print('looking in '+TEMP_PATH+' (TEMP_PATH)')     
     for pathMain, dirs, files in os.walk(TEMP_PATH):
         print(pathMain)
         #for f in files:
@@ -219,8 +210,8 @@ def indecs3(request):
     print('checking mo '+tsela) 
     for pathMain, dirs, files in os.walk(tsela):
         print(pathMain)
-        for f in files:
-            print(f)
+        #for f in files:
+        #    print(f)
          
     return HttpResponse('e kgonne go kwala csv.')
 
@@ -234,18 +225,18 @@ def indecs4(request):
         for cd in cdr:
             writer.writerow({'user':'Extend=>'+ str(cd.user), 'clid':cd.clid})    
     
-    print('checking mo '+tsela) 
+    print('checking mo '+tsela+' (tsela)') 
     for pathMain, dirs, files in os.walk(tsela):
         print(pathMain)
-        for f in files:
-            print(f)    
+        #for f in files:
+        #    print(f)    
     print('---------------------------------------------------------------------------------------------------------------------------------------------------------')
     
-    print('checking mo '+templates) 
+    print('checking mo '+templates+' (templates)') 
     for pathMain, dirs, files in os.walk('templates'):
         print(pathMain)
-        for f in files:
-            print(f)
+        #for f in files:
+        #    print(f)
          
     return HttpResponse('e kgonne go kwala csv.')
    
@@ -274,8 +265,10 @@ def one(request):
 
 
        files = os.listdir(path)
-       for name in files:
-           print(name)
+       
+       print('looking in '+files+' (files)')     
+       #for name in files:
+       #    print(name)
 
        
        try:
