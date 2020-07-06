@@ -327,7 +327,7 @@ def seven(request):
 '''
 
 urlpatterns = patterns(
-    url(r'^$', indecs, {'template' : 'pulse.htm'}),
+    (r'^$', indecs, {'template' : 'pulse.htm'}),
     url(r'^$', index, name='homepage'),
     #url(r'^admin/', admin.site.urls),
     #url('indecs', indecs, name='indecs'),
