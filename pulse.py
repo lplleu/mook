@@ -162,7 +162,7 @@ def indecs0(request):
     #    #print(os.path.abspath)#(os.path.join(dir,name)),sep='\n')
     #    print('face it: '+os.path.abspath((name)))
     
-    print('looking in '+SETTINGS_PATH+' (SETTING_PATH)'
+    print('looking in '+SETTINGS_PATH+' (SETTING_PATH)
     print('looking in '+MAIN_DIR+' (MAIN_DIR)')          
     for pathMain, dirs, files in os.walk(MAIN_DIR):
         print(pathMain)
