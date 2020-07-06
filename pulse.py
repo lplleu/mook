@@ -85,8 +85,8 @@ settings.configure(
     DEBUG=DEBUG,
     SECRET_KEY=SECRET_KEY,
     ALLOWED_HOSTS=ALLOWED_HOSTS,
-    #ROOT_URLCONF=__name__,
-    ROOT_URLCONF='pulse.urls',
+    ROOT_URLCONF=__name__,
+    #ROOT_URLCONF='pulse.urls',
     MIDDLEWARE_CLASSES=(
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
