@@ -59,6 +59,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #DIRECTOR = r'^app/templates/pulse/templates/pulse'
  
+LANGUAGES = [('en', 'English'),]
+
 tsela = os.path.join(BASE_DIR, "templates")
 
 class InvalidTemplateVariable(str):
