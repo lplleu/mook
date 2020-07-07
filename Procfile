@@ -1,1 +1,1 @@
-web gunicorn pulse.wsgi
+web gunicorn pulse
