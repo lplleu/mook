@@ -71,7 +71,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[path.join(PROJECT_DIR, 'templates')],
+   'DIRS':[os.path.join(PROJECT_DIR, 'templates')],
    #'DIRS': ['%s/templates/' % (PROJECT_DIR),],
    '''
    'DIRS':[r'./app/pulse/templates/pulse/',
@@ -125,6 +125,11 @@ TEMPLATES = [
 
 #DATABASE = {}
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.load_template_source',     
+    'django.template.loaders.pulse.load_template_source',
+)
+
 settings.configure(
     DEBUG=DEBUG,
     SECRET_KEY=SECRET_KEY,
@@ -139,7 +144,6 @@ settings.configure(
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessagesMiddleware',
-        'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',     
     ),
    INSTALLED_APPS=(
@@ -183,7 +187,7 @@ def index(request):
         #############    print(f)
     print('root below......................................................................................................................................................................................................')     
     #print(root("templates"))     
-    return HttpResponse('Hello World'+PROJECT_DIR+'<p><a href="zero" target="_blank">0</a>|<a href="clear" target="_blank">clear</a>|<a href="indecs" target="_blank">indecs</a><br><a href="indecs0" target="_blank">indecs0</a>|<a href="indecs1" target="_blank">indecs1</a><br><a href="indecs2" target="_blank">indecs2</a>|<a href="indecs3" target="_blank">indecs3</a>|<a href="indecs4" target="_blank">indecs4</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a><br><a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a><br>|<a href="mook/" target="_blank">mook</a><p><br>\nalso, HERE IS THE PATH: <u>'+str(tsela)+'</u><br>also...') 
+    return HttpResponse('Hello World<p>'+PROJECT_DIR+'<p><a href="zero" target="_blank">0</a>|<a href="clear" target="_blank">clear</a>|<a href="indecs" target="_blank">indecs</a><br><a href="indecs0" target="_blank">indecs0</a>|<a href="indecs1" target="_blank">indecs1</a><br><a href="indecs2" target="_blank">indecs2</a>|<a href="indecs3" target="_blank">indecs3</a>|<a href="indecs4" target="_blank">indecs4</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a><br><a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a><br>|<a href="mook/" target="_blank">mook</a><p><br>\nalso, HERE IS THE PATH: <u>'+str(tsela)+'</u><br>also...') 
    
 def indecs(request):
     files = os.listdir(BASE_DIR)
