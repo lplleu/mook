@@ -71,8 +71,8 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   #'DIRS':[],
-   'DIRS': ['%s/templates/' % (PROJECT_DIR),],
+   'DIRS':[path.join(PROJECT_DIR, 'templates')],
+   #'DIRS': ['%s/templates/' % (PROJECT_DIR),],
    '''
    'DIRS':[r'./app/pulse/templates/pulse/',
            r'./app/pulse/templates/pulse',
