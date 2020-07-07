@@ -21,6 +21,7 @@ import os
 import sys
 import datetime
 import csv
+import django_heroku
 
 from io import BytesIO
 #from PIL import Image, ImageDraw
