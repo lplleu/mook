@@ -66,6 +66,8 @@ TIME_ZONE = 'UTC'
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
+   'DIRS':[],
+   '''
    'DIRS':[r'./app/pulse/templates/pulse/',
            r'./app/pulse/templates/pulse',
            r'./app/pulse/templates/',
@@ -102,6 +104,7 @@ TEMPLATES = [
            r'.templates/',
            r'./templates',
           ],
+   '''
    'APP_DIRS':True,
    'OPTIONS':{
        'context_processors':[
