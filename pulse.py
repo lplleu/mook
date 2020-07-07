@@ -61,6 +61,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
  
 tsela = os.path.join(BASE_DIR, "templates")
 
+class InvalidTemplateVariable(str):
+    def __mod__(self,other):
+        from django.template.base import TemplateSyntaxError
+        raise TemplateSyntaxError("Invalid variable : '%s'" % other)
+     
 TIME_ZONE = 'UTC'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES = [
@@ -108,6 +113,7 @@ TEMPLATES = [
    '''
    'APP_DIRS':True,
    'OPTIONS':{
+       'string_if_invalid': InvalidTemplateVariable("%s"),
        'context_processors':[
           'django.template.context_processors.debug',
           'django.template.context_processors.request',
@@ -177,7 +183,7 @@ def index(request):
         #############    print(f)
     print('root below......................................................................................................................................................................................................')     
     #print(root("templates"))     
-    return HttpResponse('Hello World<p><a href="zero" target="_blank">0</a>|<a href="clear" target="_blank">clear</a>|<a href="indecs" target="_blank">indecs</a><br><a href="indecs0" target="_blank">indecs0</a>|<a href="indecs1" target="_blank">indecs1</a><br><a href="indecs2" target="_blank">indecs2</a>|<a href="indecs3" target="_blank">indecs3</a>|<a href="indecs4" target="_blank">indecs4</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a><br><a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a><br>|<a href="mook/" target="_blank">mook</a><p><br>\nalso, HERE IS THE PATH: <u>'+str(tsela)+'</u><br>also...') 
+    return HttpResponse('Hello World'+PROJECT_DIR+'<p><a href="zero" target="_blank">0</a>|<a href="clear" target="_blank">clear</a>|<a href="indecs" target="_blank">indecs</a><br><a href="indecs0" target="_blank">indecs0</a>|<a href="indecs1" target="_blank">indecs1</a><br><a href="indecs2" target="_blank">indecs2</a>|<a href="indecs3" target="_blank">indecs3</a>|<a href="indecs4" target="_blank">indecs4</a>|<a href="one" target="_blank">1</a>|<a href="two" target="_blank">2</a>|<a href="three" target="_blank">3</a><br><a href="four" target="_blank">4</a>|<a href="five" target="_blank">5</a>|<a href="six" target="_blank">6</a>|<a href="seven" target="_blank">7</a><br>|<a href="mook/" target="_blank">mook</a><p><br>\nalso, HERE IS THE PATH: <u>'+str(tsela)+'</u><br>also...') 
    
 def indecs(request):
     files = os.listdir(BASE_DIR)
