@@ -62,11 +62,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 tsela = os.path.join(BASE_DIR, "templates")
 
 TIME_ZONE = 'UTC'
-
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES = [
   {
    'BACKEND':'django.template.backends.django.DjangoTemplates',
-   'DIRS':[],
+   #'DIRS':[],
+   'DIRS': ['%s/templates/' % (PROJECT_DIR),],
    '''
    'DIRS':[r'./app/pulse/templates/pulse/',
            r'./app/pulse/templates/pulse',
