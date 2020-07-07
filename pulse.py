@@ -289,7 +289,41 @@ def indecxs(request):
     return HttpResponse('e kgonne go kwala csv.')
    
 def zero(request):
-    select_template(['pulse/pulse.html',r'^app/templates/pulse/templates/pulse','./pulse.html','pulse.html','templates/pulse.html']) 
+    select_template(['pulse/pulse.html',r'^app/templates/pulse/templates/pulse','./pulse.html','pulse.html','templates/pulse.html',r'./app/pulse/templates/pulse/',
+           r'./app/pulse/templates/pulse',
+           r'./app/pulse/templates/',
+           r'./app/pulse/templates',
+           './app/pulse/templates/pulse',
+           './app/pulse/templates/pulse/',
+           './app/pulse/templates/',
+           './app/pulse/templates',
+           './app/pulse/',
+           './app/pulse',
+           r'.app/templates/pulse/templates/pulse/',
+           r'.app/templates/pulse/templates/pulse',
+           r'.app/templates/pulse/templates/',
+           r'.app/templates/pulse/templates',
+           r'.app/templates/pulse/',
+           r'.app/templates/pulse',
+           r'.app/templates/',
+           r'.app/templates',
+           '.app/templates/pulse/templates/pulse/',
+           '.app/templates/pulse/templates/pulse',
+           '.app/templates/pulse/templates/',
+           '.app/templates/pulse/templates',
+           '.app/templates/pulse/',
+           '.app/templates/pulse',
+           '.app/templates/',
+           '.app/templates',
+           r'.templates/',
+           r'.templates',
+           '.templates/',
+           '.templates',
+           './templates',
+           r'./templates/',
+           r'./templates',
+           r'.templates/',
+           r'./templates',]) 
     return HttpResponse('This is zero')
 #os.path.join(BASE_DIR, 'pulse', 'templates', 'pulse')
 #os.path.join(BASE_DIR, 'templates',)
@@ -383,7 +417,7 @@ urlpatterns = (
     url('indexs', indexs, name='indexs'),
     url('indeccs', indeccs, name='indeccs'),
     url('indecxs', indecxs, name='indecxs'),
-    url('zero/', zero, name='zero'),
+    url('zero', zero, name='zero'),
     url('one', one, name='one'),
     url('two', two, name='two'),
     url('clear', clear, name='clear'),
