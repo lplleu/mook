@@ -163,7 +163,7 @@ settings.configure(
    STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),
    ),
-   TEMPLATES='/templates/',
+   TEMPLATES='templates',
    STATIC_URL='/static/',
 )
 
